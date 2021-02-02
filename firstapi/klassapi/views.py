@@ -43,7 +43,7 @@ class ArtistUpdate(generics.UpdateAPIView):
 class ArticleAPIView(APIView):
     def get(self, request):
         articles = Artist.objects.all()
-        serializer = ArticleSerializer(articles, many = True)
+        serializer = ArtistSerializer(articles, many = True)
         return Response(serializer.data)
 
     def post(self, request):
