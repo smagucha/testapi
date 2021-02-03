@@ -9,12 +9,6 @@ from rest_framework .decorators import api_view
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-# from rest_framework.generics import (
-# DestoryAPIView,
-# ListCreateAPIView,
-# UpdateAPIView,
-# RetrieveAPIView,
-# )
 from rest_framework import generics
 
 class MyView(View):
@@ -28,17 +22,17 @@ class ArtistList(generics.ListCreateAPIView):
 class ArtistDetail(generics.RetrieveAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    lookup_field='pk'
+
 
 class ArtistDelete(generics.DestroyAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    lookup_field='pk'
+
 
 class ArtistUpdate(generics.UpdateAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
-    lookup_field='pk'
+
 
 class ArticleAPIView(APIView):
     def get(self, request):
