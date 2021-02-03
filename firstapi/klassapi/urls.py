@@ -6,7 +6,8 @@ from .views import(
 ArtistList,
 ArtistDetail,
 ArtistDelete,
-ArtistUpdate
+ArtistUpdate,
+PostDetail
        )
 
 urlpatterns = [
@@ -17,7 +18,5 @@ urlpatterns = [
     path('<int:pk>/classdetail',ArtistDetail.as_view()),
     path('<int:pk>/classdelete',ArtistDelete.as_view()),
     path('<int:pk>/classupdate',ArtistUpdate.as_view()),
-
-
-
+    path('<int:pk>/PostDetail', PostDetail.as_view()),
 ]

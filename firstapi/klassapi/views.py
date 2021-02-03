@@ -28,6 +28,9 @@ class ArtistDelete(generics.DestroyAPIView):
     queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
 
+class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Artist.objects.all()
+    serializer_class = ArtistSerializer
 
 class ArtistUpdate(generics.UpdateAPIView):
     queryset = Artist.objects.all()
